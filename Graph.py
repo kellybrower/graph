@@ -18,7 +18,7 @@ class Graph:
         def __hash__(self):    #will allow vertex to be a map/key set
             return hash(id(self))
 
-#----------nested Edge class -----------
+    #----------nested Edge class -----------
     class Edge:
         """Lightweight edge structure for a graph."""
         __slots__ = '_origin', '_destination', '_element'
