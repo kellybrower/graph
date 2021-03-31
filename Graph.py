@@ -32,13 +32,9 @@ class Graph:
         def endpoints(self):
             """Return (u,v) tuple for vertices u and v."""
             return(self._origin, self._destination)
-    
         def opposite(self, v):
-           """Return the vertex that is opposite v on this edge."""
-           result = set()    #avoid double-reporting edges of undirected traph
-           for secondary_map in self._outgoing.values():
-                   result.update(secondary_map.values())    #add edges to resulting set
-           return result
+            """Return the vertex that is opposite v on this edges."""
+            return self._destination if v is self._origin else self._origin
     
         def element(self):
             """Return element associated with this edge."""
